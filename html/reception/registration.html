@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>起業人生ゲーム 受付</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>起業人生ゲーム 受付</h1>
+        <div>ZEN大学学園祭2025 起業サークル</div>
+    </header>
+
+    <main>
+        <p>起業人生ゲームへの参加受付を行います。</p>
+        <p>以下のフォームに必要事項を入力し、送信してください。必須項目以外はアンケートとなっていますので、任意記入ではありますが記入していただけると幸いです。</p>
+
+        <h2>参加回</h2>
+        <p>参加を希望する回を選択してください。各回10分前を目安にブースにお越しください。時間まで、自由に行動して大丈夫です！（起業サークルブースにいる必要はありません）</p>
+
+        <div id="reception-info">現在、<strong>10:00～10:40</strong>の回の参加受付中です。</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>時間</th>
+                    <th>受付状況</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:00～09:40</td>
+                    <td class="status-closed">受付終了</td>
+                </tr>
+                <tr>
+                    <td>10:00～10:40</td>
+                    <td class="status-open">受付中</td>
+                </tr>
+                <tr>
+                    <td>11:00～11:40</td>
+                    <td class="status-unopened">受付開始前</td>
+                </tr>
+                <tr>
+                    <td>13:00～13:40</td>
+                    <td class="status-unopened">受付開始前</td>
+                </tr>
+                <tr>
+                    <td>14:00～14:40</td>
+                    <td class="status-unopened">受付開始前</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>参加回選択<div class="required">必須</div></h3>
+
+        <select name="session" id="session" required>
+            <option value="1" disabled>09:00～09:40 受付終了</option>
+            <option value="2" selected>10:00～10:40 受付中</option>
+            <option value="3" disabled>11:00～11:40 受付開始前</option>
+            <option value="4" disabled>13:00～13:40 受付開始前</option>
+            <option value="5" disabled>14:00～14:40 受付開始前</option>
+        </select>
+
+        <h2>参加者情報</h2>
+        <h3>ニックネーム<div class="required">必須</div></h3>
+        
+        <p>ニックネームはゲーム画面や会場のLED電光掲示板に表示されますのでご注意ください。</p>
+        <input type="text" name="nickname" id="nickname" placeholder="例：起業太郎" required>
+
+        <div class="optional">以下はアンケート項目となりますので、可能な範囲でご記入ください。</div>
+
+        <h3>年齢</h3>
+        <input type="number" name="age" id="age" placeholder="例：20">
+        
+        <h3>性別(性自認)</h3>
+        <p>自認している性別に最も近いものを選択してください。</p>
+        <select name="gender" id="gender">
+            <option value="" disabled selected>選択してください</option>
+            <option value="1">男性</option>
+            <option value="2">女性</option>
+            <option value="3">その他</option>
+        </select>
+
+        <h3>学生の方</h3>
+        <p>ZEN大生の方、他校生の方、高校生の方など、学生の方はぜひご記入ください。</p>
+        <select name="student" id="student">
+            <optgroup label="学生ではない方">
+                <option value="1">学生ではない</option>
+            </optgroup>
+            <optgroup label="大学生">
+                <option value="2">ZEN大生(1期生・1回生)</option>
+                <option value="3">ZEN大学(2期生・2回生)</option>
+                <option value="4">ZEN大学以外</option>
+            </optgroup>
+            <optgroup label="高校生(N高系列)">
+                <option value="5">N/S/R高 1年生</option>
+                <option value="6">N/S/R高 2年生</option>
+                <option value="7">N/S/R高 3年生</option>
+                <option value="8">N/S/R高 その他</option>
+            </optgroup>
+            <optgroup label="高校生(N/S/R高以外)">
+                <option value="9">N/S/R高以外 1年生</option>
+                <option value="10">N/S/R高以外 2年生</option>
+                <option value="11">N/S/R高以外 3年生</option>
+                <option value="12">N/S/R高以外 その他</option>
+            </optgroup>
+            <optgroup label="その他">
+                <option value="13">大学院生</option>
+                <option value="14">高専生</option>
+                <option value="15">専門学校等</option>
+                <option value="16">中学生以下</option>
+            </optgroup>
+        </select>
+
+        <h2>起業について</h2>
+        <p>起業サークルですので、ぜひ起業についての考えや状況などがありましたらお聞かせください。</p>
+
+        <h3>起業への興味や状況</h3>
+        <input type="radio" name="entrepreneurship" value="1" id="entrepreneurship1"><label for="entrepreneurship1">起業済み</label><br>
+        <input type="radio" name="entrepreneurship" value="2" id="entrepreneurship2"><label for="entrepreneurship2">具体的なアイデアがある/起業準備中</label><br>
+        <input type="radio" name="entrepreneurship" value="3" id="entrepreneurship3"><label for="entrepreneurship3">起業に興味がある</label><br>
+        <input type="radio" name="entrepreneurship" value="4" id="entrepreneurship4"><label for="entrepreneurship4">起業したいなぁ程度</label><br>
+        <input type="radio" name="entrepreneurship" value="5" id="entrepreneurship5"><label for="entrepreneurship5">起業には興味がない</label>
+
+        <!-- 必要に応じて項目を設定 -->
+
+        <h2>同意事項<div class="required">必須</div></h2>
+        <ul>
+            <li>ご入力いただいた参加者情報は、匿名で統計に使用し、今後のイベントなどの企画に活用するためのものです。個人情報は厳重に管理し、サークル内および必要に応じて大学職員との共有のみで、大学外に共有することはありません。</li>
+            <li>ニックネームのみ、ほかの参加者に表示されます。会場のLED表示器にも表示されますのでご注意ください。</li>
+            <li>会場にはカメラを設置し、オンライン参加の画面でライブ配信を行います。この映像は録画していません。また、広報などで撮影が入る可能性があります。</li>
+        </ul>
+
+        <input type="radio" name="agreement" value="1" id="agreement1"><label for="agreement1">同意します</label>
+        <input type="radio" name="agreement" value="2" id="agreement2"><label for="agreement2">同意しません</label>
+
+        <button type="button" id="register-button">参加する！</button>
+
+        <div id="result-area"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ZEN大学 起業サークル</p>
+    </footer>
+
+    <script src="form.js"></script>
+</body>
+</html>
