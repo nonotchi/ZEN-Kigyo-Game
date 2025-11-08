@@ -11,13 +11,42 @@ button.addEventListener('click', function() {
 
     button.disabled = true;
     
-    let ok = false;
-
-    if (session && nickname && agreement.value === '1') {
-        ok = true;
+    if (!session) {
+        alert('参加回を選択してください');
+        button.disabled = false;
+        return;
     }
 
+    if (!nickname) {
+        alert('ニックネームを入力してください');
+        button.disabled = false;
+        return;
+    }
+
+    // JISコード変換(電光掲示板用)
+    let nicknameJIS;
+
+    try {
+        nicknameJIS = Encoding.convert(nickname, {
+            to: "ISO-2022-JP",
+            type: 'array',
+            fallback: 'error'
+        });
+    } catch (e) {
+        alert('ニックネームに未対応の文字が含まれています');
+        button.disabled = false;
+        return;
+    }
+
+    if (agreement.value !== '1') {
+        alert('同意事項に同意してください');
+        button.disabled = false;
+        return;
+    }
+
+
     // TODO: 送信処理
+    const ok = true; // 送信結果
 
     if (ok) {
         document.getElementById('result-area').innerHTML = `<p>参加受付が完了しました！</p>

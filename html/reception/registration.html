@@ -8,8 +8,11 @@
 </head>
 <body>
     <header>
-        <h1>起業人生ゲーム 受付</h1>
-        <div>ZEN大学学園祭2025 起業サークル</div>
+        <img src="../common/logo.png" alt="起業サークル ロゴ">
+        <div class="header-text">
+            <h1>起業人生ゲーム 受付</h1>
+            <div>ZEN大学学園祭2025 起業サークル</div>
+        </div>
     </header>
 
     <main>
@@ -65,7 +68,7 @@
         <h2>参加者情報</h2>
         <h3>ニックネーム<div class="required">必須</div></h3>
         
-        <p>ニックネームはゲーム画面や会場のLED電光掲示板に表示されますのでご注意ください。</p>
+        <p>ニックネームはゲーム画面や会場のLED電光掲示板に表示されますのでご注意ください。また、電光掲示板システムの都合上、絵文字や記号などの特殊文字は使用できません。</p>
         <input type="text" name="nickname" id="nickname" placeholder="例：起業太郎" required>
 
         <div class="optional">以下はアンケート項目となりますので、可能な範囲でご記入ください。</div>
@@ -76,40 +79,41 @@
         <h3>性別(性自認)</h3>
         <p>自認している性別に最も近いものを選択してください。</p>
         <select name="gender" id="gender">
-            <option value="" disabled selected>選択してください</option>
-            <option value="1">男性</option>
-            <option value="2">女性</option>
-            <option value="3">その他</option>
+            <option value="1" selected>未選択</option>
+            <option value="2">男性</option>
+            <option value="3">女性</option>
+            <option value="4">その他</option>
         </select>
 
         <h3>学生の方</h3>
         <p>ZEN大生の方、他校生の方、高校生の方など、学生の方はぜひご記入ください。</p>
         <select name="student" id="student">
+            <option value="1" selected>未選択</option>
             <optgroup label="学生ではない方">
-                <option value="1">学生ではない</option>
+                <option value="2">学生ではない</option>
             </optgroup>
             <optgroup label="大学生">
-                <option value="2">ZEN大生(1期生・1回生)</option>
-                <option value="3">ZEN大学(2期生・2回生)</option>
-                <option value="4">ZEN大学以外</option>
+                <option value="3">ZEN大生(1期生・1回生)</option>
+                <option value="4">ZEN大学(2期生・2回生)</option>
+                <option value="5">ZEN大学以外</option>
             </optgroup>
             <optgroup label="高校生(N高系列)">
-                <option value="5">N/S/R高 1年生</option>
-                <option value="6">N/S/R高 2年生</option>
-                <option value="7">N/S/R高 3年生</option>
-                <option value="8">N/S/R高 その他</option>
+                <option value="6">N/S/R高 1年生</option>
+                <option value="7">N/S/R高 2年生</option>
+                <option value="8">N/S/R高 3年生</option>
+                <option value="9">N/S/R高 その他</option>
             </optgroup>
             <optgroup label="高校生(N/S/R高以外)">
-                <option value="9">N/S/R高以外 1年生</option>
-                <option value="10">N/S/R高以外 2年生</option>
-                <option value="11">N/S/R高以外 3年生</option>
-                <option value="12">N/S/R高以外 その他</option>
+                <option value="10">N/S/R高以外 1年生</option>
+                <option value="11">N/S/R高以外 2年生</option>
+                <option value="12">N/S/R高以外 3年生</option>
+                <option value="13">N/S/R高以外 その他</option>
             </optgroup>
             <optgroup label="その他">
-                <option value="13">大学院生</option>
-                <option value="14">高専生</option>
-                <option value="15">専門学校等</option>
-                <option value="16">中学生以下</option>
+                <option value="14">大学院生</option>
+                <option value="15">高専生</option>
+                <option value="16">専門学校等</option>
+                <option value="17">中学生以下</option>
             </optgroup>
         </select>
 
@@ -133,7 +137,7 @@
         </ul>
 
         <input type="radio" name="agreement" value="1" id="agreement1"><label for="agreement1">同意します</label>
-        <input type="radio" name="agreement" value="2" id="agreement2"><label for="agreement2">同意しません</label>
+        <input type="radio" name="agreement" value="2" id="agreement2" checked><label for="agreement2">同意しません</label>
 
         <button type="button" id="register-button">参加する！</button>
 
@@ -144,6 +148,7 @@
         <p>&copy; 2025 ZEN大学 起業サークル</p>
     </footer>
 
+    <script src="../common/encoding.min.js"></script>
     <script src="form.js"></script>
 </body>
 </html>

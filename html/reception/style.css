@@ -88,17 +88,25 @@ button:disabled:hover {
 }
 
 header {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
     background-color: #4CAF50;
     color: white;
-    text-align: center;
 }
 
-header h1 {
+header img {
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header-text h1 {
     margin: 0;
-    padding: 7px;
+    padding-top: 7px;
 }
 
-header div {
+.header-text div {
     padding-bottom: 7px;
     font-size: 1.2em;
 }
