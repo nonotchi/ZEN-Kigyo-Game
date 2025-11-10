@@ -35,6 +35,13 @@ thead {
     color: white;
 }
 
+tbody tr {
+    background-color: white;
+}
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
 .status-open {
     color: #005aff;
     font-weight: bold;
