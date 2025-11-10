@@ -11,7 +11,11 @@ setInterval(() => {
 }, 200);
 
 // 回転処理
+let isSpinning = false;
 rouletteWheel.addEventListener('click', () => {
+    if (isSpinning) return;
+
+    isSpinning = true;
     const totalDuration = Math.random() * 2000 + 4000; // 回転時間
     const finalAngle = Math.random() * 360 + 3600; // 最終角度(10回転以上)
 
@@ -27,5 +31,6 @@ rouletteWheel.addEventListener('click', () => {
         if (result === 0) result = 8;
 
         alert(result);
+        isSpinning = false;
     }, totalDuration);
 });
